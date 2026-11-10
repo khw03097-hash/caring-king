@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>우리 반 배려왕 투표</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%91%91%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/base.css">
+  <link rel="stylesheet" href="assets/student.css">
+</head>
+<body>
+  <main class="card">
+    <section id="vote" hidden>
+      <div class="crown" aria-hidden="true">👑</div>
+      <h1 id="title">우리 반 배려왕</h1>
+      <p class="lead">우리 반에서 친구를 가장 잘 배려하는 친구의 이름을 적어 주세요.</p>
+      <form id="form" autocomplete="off">
+        <label for="name" class="sr-only">친구 이름</label>
+        <input id="name" type="text" maxlength="12" placeholder="친구 이름" enterkeyhint="send" autocapitalize="off" spellcheck="false">
+        <button id="submit" class="btn primary" type="submit">투표하기</button>
+        <p class="once">투표는 한 번만 할 수 있어요. 잘 확인하고 눌러 주세요!</p>
+        <p id="msg" class="msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="done" class="result" hidden>
+      <div class="check" aria-hidden="true">✅</div>
+      <h2>투표했어요!</h2>
+      <p class="picked" id="picked"></p>
+      <p class="note">선생님 화면을 함께 봐요!</p>
+    </section>
+
+    <section id="broken" class="closed" hidden>
+      <div class="lock" aria-hidden="true">🔗</div>
+      <h2>주소가 올바르지 않아요</h2>
+      <p>선생님이 보여 준 QR 코드로 다시 들어와 주세요.</p>
+    </section>
+  </main>
+  <script src="assets/student.js"></script>
+</body>
+</html>

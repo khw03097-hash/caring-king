@@ -1,0 +1,80 @@
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 20px 16px;
+  background:
+    radial-gradient(circle at 15% 10%, #ffe9b8, transparent 45%),
+    radial-gradient(circle at 90% 95%, #ffd5c2, transparent 45%),
+    var(--bg);
+}
+
+.card {
+  word-break: keep-all; /* 한글을 글자 중간이 아니라 단어 단위로 줄바꿈 */
+  text-wrap: balance;
+  width: min(100%, 440px);
+  padding: 28px 22px 26px;
+  text-align: center;
+  background: var(--card);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(120, 70, 20, 0.14);
+}
+
+.crown {
+  font-size: 56px;
+  line-height: 1;
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob {
+  50% { transform: translateY(-6px) rotate(-4deg); }
+}
+
+h1 { margin: 6px 0 8px; font-size: 30px; line-height: 1.25; }
+
+.lead { margin: 0 0 20px; font-size: 18px; line-height: 1.55; color: var(--muted); }
+
+#name {
+  width: 100%;
+  padding: 16px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  background: #fffaf3;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+}
+#name:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(255, 122, 69, 0.2); }
+#name::placeholder { color: #c4b2a4; font-weight: 400; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.chip {
+  padding: 9px 14px;
+  font-size: 17px;
+  font-weight: 700;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip[aria-pressed='true'] { color: #fff; background: var(--brand-dark); border-color: var(--brand-dark); }
+
+#submit { width: 100%; margin-top: 18px; padding: 16px; font-size: 22px; }
+
+.once { margin: 12px 0 0; font-size: 15px; color: var(--muted); }
+.msg { min-height: 1.6em; margin: 6px 0 0; font-size: 16px; font-weight: 700; color: var(--danger); }
+
+.result .check { font-size: 64px; line-height: 1; }
+.result h2 { margin: 8px 0 4px; font-size: 24px; }
+.result .picked { margin: 0 0 6px; font-size: 38px; font-weight: 800; color: var(--brand-dark); word-break: keep-all; }
+.result .note { margin: 0; color: var(--muted); font-size: 17px; }
+
+.closed .lock { font-size: 56px; line-height: 1; }
+.closed h2 { margin: 8px 0 4px; font-size: 24px; }
+.closed p { margin: 0; color: var(--muted); font-size: 18px; }

@@ -1,0 +1,74 @@
+/* 학생 화면·교사 화면이 함께 쓰는 기본 스타일 */
+:root {
+  --bg: #fff7e8;
+  --card: #ffffff;
+  --ink: #3b2f2a;
+  --muted: #7d6b60;
+  --line: #ffd9b8;
+  --brand: #ff7a45;
+  --brand-dark: #d9480f;
+  --gold: #ffc233;
+  --ok: #2b8a3e;
+  --danger: #c92a2a;
+  --font: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Segoe UI', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+}
+
+[hidden] { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 0 2px 0 var(--line), 0 0 0 2px var(--line) inset;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+}
+.btn:hover { background: #fff3e6; }
+.btn:active { transform: translateY(2px); box-shadow: 0 0 0 var(--line), 0 0 0 2px var(--line) inset; }
+.btn:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.btn:disabled { opacity: 0.55; cursor: default; }
+
+.btn.primary {
+  color: #fff;
+  background: var(--brand-dark);
+  box-shadow: 0 4px 0 #a63a0a;
+}
+.btn.primary:hover { background: #c2410c; }
+.btn.primary:active { box-shadow: 0 0 0 #a63a0a; transform: translateY(4px); }
+
+.btn.gold { background: var(--gold); box-shadow: 0 3px 0 #d99a00; }
+.btn.gold:hover { background: #ffcd55; }
+
+.btn.danger { color: var(--danger); box-shadow: 0 2px 0 #f3c2c2, 0 0 0 2px #f3c2c2 inset; }
+.btn.danger:hover { background: #fff0f0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
